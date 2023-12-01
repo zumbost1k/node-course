@@ -58,3 +58,4 @@ const f05 = () => {
 // получить абсолютный путь
 const directoruPath = path.join(__dirname, 'test');
 console.log(directoruPath);
+console.log(directoruPath);

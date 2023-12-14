@@ -1,9 +1,11 @@
+import fileService from './fileService.js';
 import Post from './schemas/Post.js';
 
 class PostService {
-  async create(post) {
+  async create(post, picture) {
+    const fileName = fileService.saveFile(picture);
     //send getted data to the db
-    const createdPost = await Post.create(post);
+    const createdPost = await Post.create({ ...post, picture: fileName });
     return createdPost;
   }
   async getAll() {
@@ -32,7 +34,7 @@ class PostService {
     if (!id) {
       throw new Error('post by current id not found');
     }
-    console.log(id)
+    console.log(id);
     const post = await Post.findByIdAndDelete(id);
     return post;
   }

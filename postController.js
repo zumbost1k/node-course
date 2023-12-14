@@ -1,11 +1,10 @@
 import postService from './postService.js';
-import Post from './schemas/Post.js';
 
 class PostController {
   async create(req, res) {
     try {
       //send getted data to the db
-      const post = await postService.create(req.body);
+      const post = await postService.create(req.body, req.files.picture);
       //sen data to the server
       res.json(post);
     } catch (error) {

@@ -8,7 +8,9 @@ const app = express();
 
 //преобразовываем данные из запроса из json в js
 app.use(express.json());
-app.get('/', (req, res) => {
+app.get('/', async (req, res) => {
+  const { author, title, content, picture } = req.body;
+  const post = await Post.create({ author, title, content, picture });
   res.status(200).send('Hello, world!');
 });
 

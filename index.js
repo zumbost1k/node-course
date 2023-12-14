@@ -1,6 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import Post from '../schemas/Post';
+import Post from './schemas/Post';
 
 const PORT = 5000;
 const dbURL = 'mongodb://127.0.0.1:27017/clocking_system';

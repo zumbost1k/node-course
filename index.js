@@ -4,7 +4,7 @@ import router from './router.js';
 import fileUpload from 'express-fileupload';
 
 const PORT = 5000;
-const dbURL = 'mongodb://127.0.0.1:27017/clocking_system';
+const dbURL = 'mongodb://127.0.0.1:27017/mydb';
 const app = express();
 
 //transform json data from requests to js

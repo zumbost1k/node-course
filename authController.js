@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt');
 
 class authController {
   async registration(req, res) {
-    console.log(req.body)
+    console.log(req.body);
     try {
       const { username, password } = req.body;
       //database name existence check
